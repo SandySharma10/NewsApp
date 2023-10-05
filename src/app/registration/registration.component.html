@@ -1,0 +1,56 @@
+<body>
+  <div><h1>{{message}}</h1></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-img-left d-none d-md-flex" >
+                <img src="../../assets/download.png"/>
+               <!-- Background image for card set in CSS! -->
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-center">Register</h5>
+              <form class="form-signin" [formGroup]="loginform" (ngSubmit)="registerNow()">
+                <div  class="form-group">
+                  <input type="text" [formControl]='username' id="inputUserame" class="form-control" placeholder="Username" required autofocus>
+                  <!--<label for="inputUserame">Username</label>-->
+                </div>
+  
+                <div class="form-group">
+                  <input type="email" [formControl]='email' id="inputEmail" class="form-control" placeholder="Email address">
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                <div *ngIf="email.errors.required">
+                   Email is required.
+                </div>
+                <div *ngIf="email.errors.minlength">
+                  Email must contain @ Sign.
+                </div>
+
+                </div>
+                </div>
+              
+                <div class="form-group">
+                  <input  type="password" [formControl]='pass' id="inputPassword" class="form-control" placeholder="Password" >
+                  <!--<label for="inputPassword">Password</label>-->
+                  
+                </div>
+             
+               
+                
+                <div class="form-group">
+                  <input style="float: left" type="password" [formControl]='conf_pass' id="inputConfirmPassword" class="form-control" placeholder="Confirn Password">
+                  
+                  <!--<label for="inputConfirmPassword">Confirm password</label>-->
+                </div>
+                <div>
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" [disabled]='!loginform.valid'>Register</button>
+              </div>
+                <a class="d-block text-center mt-2 small" href="#">Sign In</a>
+                
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

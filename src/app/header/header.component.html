@@ -1,0 +1,47 @@
+  <div class="header">
+  <div class="brand">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-4">
+                <div class="b-logo">
+                    <a href="index.html">
+                        <img src="../../assets/images.jpeg" alt="Logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-4">
+                <div class="b-ads">
+                    <a href="https://htmlcodex.com">
+                        <!--<img src="../../assets/ads-1.jpg" alt="Ads">-->
+                        <img src="../../assets/bannerNewsDesk_1000x250.jpg" alt="Ads">
+                        
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4">
+                <div class="b-search" >
+                    <input type="text" [(ngModel)]="selectsearch" placeholder="Search" (change)="searchdata(selectsearch)">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div>
+    <!--<span style="float:right; padding-top: 5px;font-size: 0.8em; color: #ccc;">
+ 
+        <a href=""  *ngIf="!authService.loggedIn()" class="wp-myaccount-url" style="color: #000; font-size: 15px;" onmouseover="this.style.color='#00bee0';" onmouseout="this.style.color='#000';"> My Account </a>
+        <a href="login" *ngIf="!authService.loggedIn()" class="wp-login-url" style="color: #000; font-size: 15px;" onmouseover="this.style.color='#00bee0';" onmouseout="this.style.color='#000';"> Login</a>
+        <a href="login" *ngIf="authService.loggedIn()"class="wp-logout-url" style="color: #000; font-size: 15px; margin-right: 10px;" onmouseover="this.style.color='#00bee0';" onmouseout="this.style.color='#000';" (click)="authService.logoutUser()"> Logout</a>
+        </span>-->
+        <span style="float:right; padding-top: 5px;font-size: 0.8em; color: #ccc;">
+ 
+            <a href=""  *ngIf="!loggedIn()"  > My Account </a>
+            <a  *ngIf="!loggedIn()" > Login</a>
+            <a  *ngIf="loggedIn()" class="wp-logout-url" style="color: #000; font-size: 15px; margin-right: 10px;" onmouseover="this.style.color='#00bee0';" onmouseout="this.style.color='#000';" (click)="logoutUser()"> Logout</a>
+            </span>
+</div>
+</div>
+<!-- Brand End -->
+

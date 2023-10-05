@@ -1,0 +1,36 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../../assets/download.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="loginForm " (ngSubmit)="login()"> 
+      <!--<label for="username">UserName</label>-->
+    
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" formControlName="username">
+      
+      <small *ngIf="username.invalid  && (username.dirty || username.touched)">
+        UserName is Manditory feild
+    </small>
+    <!--<label for="password">Password</label>-->
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password" formControlName="password">
+      <small *ngIf="password.invalid  && (password.dirty || password.touched)">
+        <small *ngIf="password.errors.required"> 
+         Password can not be left blank !!
+        </small>
+        <small *ngIf="password.errors.minlength">
+            Password must have min 6 character
+        </small>
+        </small>
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    
+
+  </div>
+</div>

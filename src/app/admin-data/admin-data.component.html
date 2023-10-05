@@ -1,0 +1,65 @@
+<app-header></app-header>
+<div>
+   <!-- Top Bar Start -->
+<div class="topnav" style="margin-top: 50px;">
+  <a class="active" href="home">Home</a>
+  
+
+  <div class="container1">
+    <div class="div1">
+      <label for="contry" class="mr-sm-2" style="color:white;">Choose a Country : </label>
+      <select [(ngModel)]="country" name="Country" (change)="selectcountry(country)" id="contry" class="contry">
+        <option value="us">U.S</option>
+        <option value="in">India</option>
+      </select>
+    </div>
+    <div class=div3>
+      <label for="contry" class="mr-sm-2" style="color:white;">Choose a Category: </label>
+      <select [(ngModel)]="categaury" name="Category" (change)="selectcategaury(categaury)" id="category" class="category">
+        <option value="sprot">Sport</option>
+        <option value="science">Science</option>
+        <option value="coronavirus">Coronavirus</option>
+        <option value="business">Business</option>
+      </select>
+    </div>
+    <div class="div2">
+      <label   for="date" class="mr-sm-2" style="color:white;">From:</label>
+      <input [(ngModel)]="from" (change)="selectfrom(from)" type="date" id="Date" name="Date" class="date">
+    </div>
+    <div class="div4">
+      <label for="date" class="mr-sm-2" style="color:white;">To:</label>
+      <input  [(ngModel)]="to" (change)="selectto(to)" type="date" id="Date" name="Date" class="to">
+    </div>
+
+  </div>
+</div>
+<div style="display:flex" class="paginate">
+  <div class="center" *ngFor="let item of articals | paginate: {itemsPerPage: 5, currentPage: p }">
+
+    <div class="property-card">
+      <a href="javascript:void(0)">
+        <div class="property-image" (click)="selectNews(item)">
+          <img src="{{item.urlToImage}}" />
+
+          <div class="property-image-title">
+
+            <!-- Optional <h5>Card Title</h5> If you want it, turn on the CSS also. -->
+          </div>
+        </div>
+      </a>
+      <div class="property-description">
+
+        <h5> {{item.author}} </h5>
+        <p>{{item.description}}</p>
+      </div>
+      <a href="#">
+        <div class="property-social-icons">
+          <!-- I would usually put multipe divs inside here set to flex. Some people might use Ul li. Multiple Solutions -->
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<app-footer></app-footer>
